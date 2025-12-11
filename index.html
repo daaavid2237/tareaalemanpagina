@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umweltschutz in Deutschland</title>
+    <style>
+        /* Reset und grundlegende Stile */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header und Navigation */
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #e8f5e9;
+            text-decoration: underline;
+        }
+        
+        /* Hero-Bereich */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            color: white;
+            max-width: 600px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2e7d32;
+        }
+        
+        /* Hauptinhalt */
+        main {
+            padding: 4rem 0;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #c8e6c9;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #388e3c;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Umweltziele */
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .goal-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .goal-icon {
+            font-size: 2.5rem;
+            color: #4caf50;
+            margin-bottom: 1rem;
+        }
+        
+        /* Initiativen */
+        .initiatives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .initiative-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .initiative-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .initiative-content {
+            padding: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1b5e20;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: #a5d6a7;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #e8f5e9;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #2e7d32;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🌱</span>
+                    <h1>Umwelt Deutschland</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#start">Start</a></li>
+                        <li><a href="#ziele">Umweltziele</a></li>
+                        <li><a href="#initiativen">Initiativen</a></li>
+                        <li><a href="#nachhaltigkeit">Nachhaltigkeit</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Umweltschutz in Deutschland</h2>
+                <p>Entdecken Sie die Initiativen und Ziele für eine nachhaltige Zukunft in Deutschland.</p>
+                <a href="#ziele" class="btn">Mehr erfahren</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="start">
+            <h2>Umweltschutz in Deutschland</h2>
+            <p>Deutschland ist weltweit führend im Umweltschutz und hat sich ehrgeizige Ziele gesetzt, um den Klimawandel zu bekämpfen und die natürlichen Ressourcen zu schützen. Die Bundesregierung verfolgt eine umfassende Umweltpolitik, die verschiedene Bereiche wie Energie, Verkehr, Landwirtschaft und Industrie umfasst.</p>
+            
+            <p>Mit dem Erneuerbare-Energien-Gesetz (EEG) hat Deutschland den Ausbau erneuerbarer Energien vorangetrieben und ist heute einer der größten Produzenten von Wind- und Solarenergie in Europa. Zudem setzt sich Deutschland für den Schutz der biologischen Vielfalt, die Reduzierung von Treibhausgasemissionen und die Förderung einer Kreislaufwirtschaft ein.</p>
+        </section>
+
+        <section id="ziele">
+            <h2>Umweltziele Deutschlands</h2>
+            <p>Deutschland hat sich im Rahmen der nationalen und internationalen Klimaabkommen ehrgeizige Umweltziele gesetzt:</p>
+            
+            <div class="goals">
+                <div class="goal-card">
+                    <div class="goal-icon">🌍</div>
+                    <h3>Klimaneutralität bis 2045</h3>
+                    <p>Deutschland strebt an, bis 2045 klimaneutral zu werden und damit einen Beitrag zur Begrenzung der globalen Erwärmung zu leisten.</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">⚡</div>
+                    <h3>Ausstieg aus der Kohle</h3>
+                    <p>Bis spätestens 2038 soll der Ausstieg aus der Kohleverstromung abgeschlossen sein, um die CO2-Emissionen deutlich zu reduzieren.</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">🌿</div>
+                    <h3>Ausbau erneuerbarer Energien</h3>
+                    <p>Bis 2030 sollen 80% des Stromverbrauchs aus erneuerbaren Energien stammen, um die Abhängigkeit von fossilen Brennstoffen zu verringern.</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">🚗</div>
+                    <h3>Elektromobilität fördern</h3>
+                    <p>Bis 2030 sollen 7-10 Millionen Elektrofahrzeuge auf deutschen Straßen fahren, um die Emissionen im Verkehrssektor zu reduzieren.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="initiativen">
+            <h2>Wichtige Umweltinitiativen</h2>
+            <p>In Deutschland gibt es zahlreiche Initiativen und Programme, die den Umweltschutz vorantreiben:</p>
+            
+            <div class="initiatives">
+                <div class="initiative-card">
+                    <div class="initiative-img" style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="initiative-content">
+                        <h3>Energiewende</h3>
+                        <p>Die Energiewende ist Deutschlands Übergang zu einer nachhaltigen Energieversorgung durch erneuerbare Energien, Energieeffizienz und nachhaltige Entwicklung.</p>
+                    </div>
+                </div>
+                
+                <div class="initiative-card">
+                    <div class="initiative-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="initiative-content">
+                        <h3>Nationale Wasserstrategie</h3>
+                        <p>Diese Strategie zielt darauf ab, die Wasserversorgung in Deutschland angesichts des Klimawandels langfristig zu sichern und Gewässer zu schützen.</p>
+                    </div>
+                </div>
+                
+                <div class="initiative-card">
+                    <div class="initiative-img" style="background-image: url('https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="initiative-content">
+                        <h3>Aktionsprogramm Insektenschutz</h3>
+                        <p>Dieses Programm soll das Insektensterben stoppen und die Lebensbedingungen für Insekten in Deutschland verbessern.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nachhaltigkeit">
+            <h2>Nachhaltigkeit im Alltag</h2>
+            <p>Jeder Einzelne kann durch nachhaltiges Verhalten im Alltag zum Umweltschutz beitragen. Hier sind einige Tipps:</p>
+            
+            <h3>Energie sparen</h3>
+            <p>Nutzen Sie energieeffiziente Geräte, schalten Sie Standby-Geräte aus und achten Sie auf eine gute Wärmedämmung in Ihrem Zuhause.</p>
+            
+            <h3>Nachhaltige Mobilität</h3>
+            <p>Nutzen Sie öffentliche Verkehrsmittel, Fahrrad oder gehen Sie zu Fuß. Wenn möglich, erwägen Sie die Anschaffung eines Elektrofahrzeugs.</p>
+            
+            <h3>Bewusster Konsum</h3>
+            <p>Kaufen Sie regionale und saisonale Produkte, reduzieren Sie Verpackungsmüll und vermeiden Sie Einwegprodukte.</p>
+            
+            <h3>Ressourcen schonen</h3>
+            <p>Trennen Sie Ihren Müll richtig, reparieren Sie defekte Gegenstände und spenden Sie nicht mehr benötigte Dinge.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Umwelt Deutschland</h3>
+                    <p>Informationsplattform für Umweltschutz und Nachhaltigkeit in Deutschland.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#start">Start</a></li>
+                        <li><a href="#ziele">Umweltziele</a></li>
+                        <li><a href="#initiativen">Initiativen</a></li>
+                        <li><a href="#nachhaltigkeit">Nachhaltigkeit</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li>E-Mail: info@umwelt-deutschland.de</li>
+                        <li>Telefon: +49 30 12345678</li>
+                        <li>Adresse: Umweltstraße 1, 10115 Berlin</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Folgen Sie uns</h3>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Umwelt Deutschland. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
